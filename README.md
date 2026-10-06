@@ -1,83 +1,48 @@
-# Data Science Capstone Project
+# Hotel Booking Revenue Analysis and Prediction
 
-A data science capstone project completed as part of the TechCrush Tech4Africans Data Science Bootcamp, demonstrating an end-to-end workflow involving data preprocessing, machine learning, and model evaluation.
+A TechCrush Tech4Africans Data Science Bootcamp capstone project by Group 4. The project analyzes hotel booking patterns, explores revenue drivers with SQL, and trains a linear regression model to estimate booking value.
 
-## Project Overview
+## Project question
 
-This project was completed as the capstone project for the TechCrush Tech4Africans Data Science Bootcamp.
+How can hotel and booking characteristics help explain booking value and support revenue, pricing, and operational decisions?
 
-The project applies data science and machine learning techniques to investigate a real-world problem using a structured dataset.
+## What is included
 
-The workflow covers the major stages of the data science process, from preparing and exploring the data through model development and evaluation.
+- `notebooks/Hotel_Booking_Revenue_Prediction.ipynb`: feature preparation, one-hot encoding, scaling, train/test split, cross-validation, linear regression, and evaluation.
+- `data/hotel_bookings_cleaned-2.xlsx`: cleaned dataset used in the supplied analysis (87,237 bookings and 36 columns).
+- `sql/HotelBookingAnalysis_SQL.sql`: SQL Server queries on hotel, customer, meal, month, room, and market-segment revenue patterns.
+- `reports/Hotel_Booking_Report_With_Values.docx`: the capstone report and documented findings.
+- `requirements.txt`: Python dependencies for the notebook.
 
-## Project Objectives
+## Run the notebook
 
-- Understand and prepare the dataset for analysis
-- Perform data preprocessing and preparation
-- Explore relevant patterns and relationships within the data
-- Develop machine learning models
-- Evaluate model performance
-- Interpret the results and communicate key findings
+Use Python 3.10 or newer. From the repository root:
 
-## Workflow
+```bash
+python -m pip install -r requirements.txt
+jupyter notebook
+```
 
-1. Data collection / dataset preparation
-2. Data cleaning and preprocessing
-3. Exploratory data analysis
-4. Feature preparation
-5. Machine learning model development
-6. Model evaluation
-7. Interpretation of results
-8. Final conclusions
+Open `notebooks/Hotel_Booking_Revenue_Prediction.ipynb` and run the cells from top to bottom. The notebook reads the workbook from `data/` whether Jupyter is started from the repository root or the `notebooks/` directory.
 
-## Technologies & Tools
+## Run the SQL analysis
 
-- Python
-- Jupyter Notebook / Google Colab
-- []
-- []
+The script is written for Microsoft SQL Server. Import `data/hotel_bookings_cleaned-2.xlsx` into the database table `hotel_bookings_cleaned-2`, then execute `sql/HotelBookingAnalysis_SQL.sql`.
 
-## Dataset
+## Reported model results
 
-Dataset: []
+The supplied report records a mean cross-validation R² of 0.8532, test R² of 0.8476, mean absolute error of 79.24, and root mean squared error of 143.88. These are the results documented in the capstone materials; they are not a guarantee of future performance.
 
-Source: []
+## Dataset source
 
-Problem being addressed: []
+The Hotel Booking Demand dataset was published by [Jesse Mostipak on Kaggle](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand) and is based on the [Hotel booking demand datasets paper](https://doi.org/10.1016/j.dib.2018.11.126) by Nuno Antonio, Ana de Almeida, and Luis Nunes. The original cleaning notebook records the Kaggle dataset license as CC BY 4.0. Please retain source attribution and review the source terms when redistributing the data.
 
-## Data Preparation
+## Scope and limitations
 
-The dataset was prepared for modelling through data cleaning, preprocessing, and feature preparation.
+This repository contains the final modeling notebook, SQL analysis, cleaned workbook, and report provided for the capstone. The separate cleaning notebook and group presentation were not included: the cleaning notebook does not export this supplied 36-column workbook, and the presentation lists all group members by name. Add the presentation only with the group's agreement.
 
-[]
+The model evaluates historical booking data. Its scores describe this dataset and modeling setup, not guaranteed performance on future hotel bookings.
 
-## Machine Learning
+## About
 
-[]
-
-## Model Evaluation
-
-[]
-
-### Results
-
-[]
-
-## Key Findings
-
-[]
-
-## Limitations
-
-[]
-
-## Project Files
-
-- `notebook.ipynb` — Main analysis and modelling notebook
-- `data/` — Dataset or dataset documentation
-- `images/` — Visualizations and project figures
-- `requirements.txt` — Project dependencies, if applicable
-
-## About the Project
-
-This project was completed as part of the TechCrush Tech4Africans Data Science Bootcamp between February and June 2026.
+Completed as part of the TechCrush Tech4Africans Data Science Bootcamp, February–June 2026.
